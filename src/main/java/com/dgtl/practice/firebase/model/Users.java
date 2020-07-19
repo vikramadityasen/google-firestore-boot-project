@@ -6,7 +6,7 @@ import java.util.Date;
 public class Users implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	private int id;
+	private int age;
 	private String name;
 	private String gender;
 	private String dateOfBirth;
@@ -19,11 +19,11 @@ public class Users implements Serializable {
 	private String updatedBy;
 
 	public int getId() {
-		return id;
+		return age;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setId(int age) {
+		this.age = age;
 	}
 
 	public String getName() {
@@ -108,15 +108,15 @@ public class Users implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", gender=" + gender + ", dateOfBirth=" + dateOfBirth
+		return "Employee [age=" + age + ", name=" + name + ", gender=" + gender + ", dateOfBirth=" + dateOfBirth
 				+ ", address=" + address + ", city=" + city + ", country=" + country + ", createdDate=" + createdDate
 				+ ", createdBy=" + createdBy + ", updatedDate=" + updatedDate + ", updatedBy=" + updatedBy + "]";
 	}
 
-	public Users(int id, String name, String gender, String dateOfBirth, String address, String city, String country,
+	public Users(int age, String name, String gender, String dateOfBirth, String address, String city, String country,
 			Date createdDate, String createdBy, Date updatedDate, String updatedBy) {
 		super();
-		this.id = id;
+		this.age = age;
 		this.name = name;
 		this.gender = gender;
 		this.dateOfBirth = dateOfBirth;

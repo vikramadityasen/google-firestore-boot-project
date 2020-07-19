@@ -1,12 +1,11 @@
 package com.dgtl.practice.firebase.service;
 
-import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-import com.google.cloud.firestore.QueryDocumentSnapshot;
+import com.dgtl.practice.firebase.model.Users;
 
 public interface UsersService {
 
-	List<QueryDocumentSnapshot> getUsers() throws InterruptedException, ExecutionException;
+	Users getUsers(String name) throws InterruptedException, ExecutionException;
 
 }
