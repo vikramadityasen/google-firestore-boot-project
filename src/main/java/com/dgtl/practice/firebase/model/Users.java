@@ -3,9 +3,13 @@ package com.dgtl.practice.firebase.model;
 import java.io.Serializable;
 import java.util.Date;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Users implements Serializable {
 
 	private static final long serialVersionUID = 1L;
+	private int id;
 	private int age;
 	private String name;
 	private String gender;
@@ -18,11 +22,48 @@ public class Users implements Serializable {
 	private Date updatedDate;
 	private String updatedBy;
 
+	public Users() {
+		super();
+	}
+
+	public Users(int id, int age, String name, String gender, String dateOfBirth, String address, String city,
+			String country, Date createdDate, String createdBy, Date updatedDate, String updatedBy) {
+		super();
+		this.id = id;
+		this.age = age;
+		this.name = name;
+		this.gender = gender;
+		this.dateOfBirth = dateOfBirth;
+		this.address = address;
+		this.city = city;
+		this.country = country;
+		this.createdDate = createdDate;
+		this.createdBy = createdBy;
+		this.updatedDate = updatedDate;
+		this.updatedBy = updatedBy;
+	}
+
+	@Override
+	public String toString() {
+		return "Users [id=" + id + ", age=" + age + ", name=" + name + ", gender=" + gender + ", dateOfBirth="
+				+ dateOfBirth + ", address=" + address + ", city=" + city + ", country=" + country + ", createdDate="
+				+ createdDate + ", createdBy=" + createdBy + ", updatedDate=" + updatedDate + ", updatedBy=" + updatedBy
+				+ "]";
+	}
+
 	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public int getAge() {
 		return age;
 	}
 
-	public void setId(int age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
 
@@ -104,32 +145,5 @@ public class Users implements Serializable {
 
 	public void setUpdatedBy(String updatedBy) {
 		this.updatedBy = updatedBy;
-	}
-
-	@Override
-	public String toString() {
-		return "Employee [age=" + age + ", name=" + name + ", gender=" + gender + ", dateOfBirth=" + dateOfBirth
-				+ ", address=" + address + ", city=" + city + ", country=" + country + ", createdDate=" + createdDate
-				+ ", createdBy=" + createdBy + ", updatedDate=" + updatedDate + ", updatedBy=" + updatedBy + "]";
-	}
-
-	public Users(int age, String name, String gender, String dateOfBirth, String address, String city, String country,
-			Date createdDate, String createdBy, Date updatedDate, String updatedBy) {
-		super();
-		this.age = age;
-		this.name = name;
-		this.gender = gender;
-		this.dateOfBirth = dateOfBirth;
-		this.address = address;
-		this.city = city;
-		this.country = country;
-		this.createdDate = createdDate;
-		this.createdBy = createdBy;
-		this.updatedDate = updatedDate;
-		this.updatedBy = updatedBy;
-	}
-
-	public Users() {
-		super();
 	}
 }
